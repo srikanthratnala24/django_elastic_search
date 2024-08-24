@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+elasticsearch-dsl = "*"
+django-elasticsearch-dsl = "*"
+pillow = "*"
+django-elasticsearch-dsl-drf = "*"
+psycopg2 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
