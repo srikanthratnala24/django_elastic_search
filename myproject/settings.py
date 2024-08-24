@@ -43,6 +43,11 @@ INSTALLED_APPS = [
     'django_elasticsearch_dsl_drf',
     
 ]
+import urllib3
+from elasticsearch import Elasticsearch
+
+# Suppress only the InsecureRequestWarning
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 ELASTICSEARCH_DSL = {
     'default': {

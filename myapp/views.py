@@ -19,3 +19,10 @@ class BookSearchView(APIView):
         search = Search(index='books').query("multi_match", query=q, fields=['title', 'author'])
         response = search.execute()
         return Response(response.to_dict()['hits']['hits'])
+    
+class CarSearchView(APIView):
+    def get(self, request):
+        q = request.GET.get('q')
+        search = Search(index='cars').query("multi_match", query=q, fields=['name'])
+        response = search.execute()
+        return Response(response.to_dict()['hits']['hits'])

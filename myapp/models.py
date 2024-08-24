@@ -14,3 +14,16 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Car(models.Model):
+    name = models.CharField(max_length=30)
+    model = models.CharField(max_length=40)
+    cc = models.IntegerField()
+    gear = models.BooleanField()
+    ev = models.BooleanField()
+
+
+    def __str__(self):
+        return self.name
+    
