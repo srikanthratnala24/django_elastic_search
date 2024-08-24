@@ -7,11 +7,6 @@ from .serializers import BookSerializer
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    # filter_backends = [FilteringFilterBackend]
-    # filter_fields = {
-    #     'title': FILTER_TERMS,
-    #     'author': FILTER_TERMS,
-    # }
 
 from django_elasticsearch_dsl.search import Search
 from rest_framework.response import Response
