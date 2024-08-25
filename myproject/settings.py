@@ -51,9 +51,10 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 ELASTICSEARCH_DSL = {
     'default': {
-        'hosts': 'http://localhost:9200',
-        'http_auth': ('elastic', '123456'),
+        'hosts': 'http://elasticsearch:9200',
+        # 'http_auth': ('username', 'password'),
         'verify_certs': False,
+        # 'scheme': 'http'
     },
 }
 
