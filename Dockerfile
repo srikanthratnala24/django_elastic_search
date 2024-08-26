@@ -36,4 +36,4 @@ EXPOSE 8000
 
 # Run migrations and start the Django development server
 # CMD ["pipenv", "run", "sh", "-c", "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
-CMD ["sh", "-c", "pipenv run python manage.py makemigrations && pipenv run python manage.py migrate && pipenv run python manage.py search_index --rebuild && pipenv run python manage.py runserver 0.0.0.0:8000"]
+# CMD ["sh", "-c", "pipenv run python manage.py makemigrations && pipenv run python manage.py migrate && pipenv run python manage.py search_index --rebuild && pipenv run python manage.py runserver 0.0.0.0:8000"]

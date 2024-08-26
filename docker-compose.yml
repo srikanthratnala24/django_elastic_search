@@ -34,7 +34,7 @@ services:
 
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000 --settings myproject.settings.production
     volumes:
       - .:/app
     ports:

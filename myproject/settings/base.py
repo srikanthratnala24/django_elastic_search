@@ -22,8 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-%j)4hus9xp*9kk^$ub#7drjxivcgybbu$!6h(kvn@ercv_qhv6'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = []
 
@@ -49,14 +48,7 @@ from elasticsearch import Elasticsearch
 # Suppress only the InsecureRequestWarning
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-ELASTICSEARCH_DSL = {
-    'default': {
-        'hosts': 'http://elasticsearch:9200',
-        # 'http_auth': ('username', 'password'),
-        'verify_certs': False,
-        # 'scheme': 'http'
-    },
-}
+
 
 
 
@@ -92,36 +84,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-import os
-
-# Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'your_db_name'),
-        'USER': os.getenv('DB_USER', 'your_db_user'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'your_db_password'),
-        'HOST': os.getenv('DB_HOST', 'db'),
-        'PORT': os.getenv('DB_PORT', '5432'),
-    }
-}
-
-# Elasticsearch
-# ELASTICSEARCH_DSL = {
-#     'default': {
-#         'hosts': f"{os.getenv('ELASTICSEARCH_HOST', 'localhost')}:{os.getenv('ELASTICSEARCH_PORT', 9200)}"
-#     },
-# }
 
 
 # Password validation
