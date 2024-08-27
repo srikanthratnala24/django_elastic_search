@@ -8,7 +8,7 @@ router.register(r'books', BookViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('search/', BookSearchView.as_view(), name='book-search'),
-    path('carsearch/', CarSearchView.as_view(), name='car-search'), 
+    path('carsearch/', CarSearchView.as_view(), name='car-search'),
 ]
 
 

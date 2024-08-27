@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'myapp',
     'django_elasticsearch_dsl',
     'django_elasticsearch_dsl_drf',
-    'rest_framework_simplejwt'
-
     
 ]
 import urllib3
@@ -51,31 +49,7 @@ from elasticsearch import Elasticsearch
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
-#rest framework settings
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-}
 
-from datetime import timedelta
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': False,
-    'BLACKLIST_AFTER_ROTATION': True,
-    'UPDATE_LAST_LOGIN': False,
-    'ALGORITHM': 'HS256',
-    'SIGNING_KEY': SECRET_KEY,
-    'VERIFYING_KEY': None,
-    'AUDIENCE': None,
-    'ISSUER': None,
-    'AUTH_HEADER_TYPES': ('Bearer',),
-    'USER_ID_FIELD': 'id',
-    'USER_ID_CLAIM': 'user_id',
-    'AUTH_TOKEN_CLASSES': ('access',),
-    'TOKEN_TYPE_CLAIM': 'token_type',
-}
 
 
 
