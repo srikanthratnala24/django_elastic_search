@@ -11,6 +11,7 @@ django-elasticsearch-dsl = "*"
 pillow = "*"
 django-elasticsearch-dsl-drf = "*"
 psycopg2 = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 

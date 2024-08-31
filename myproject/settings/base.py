@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'user',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'myapp',
     'django_elasticsearch_dsl',
     'django_elasticsearch_dsl_drf',
+    'rest_framework_simplejwt'
     
 ]
 import urllib3
@@ -49,6 +51,25 @@ from elasticsearch import Elasticsearch
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
+AUTH_USER_MODEL = 'user.CustomUser'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': 'your_secret_key_here',
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
 
 
 
