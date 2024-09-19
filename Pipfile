@@ -12,6 +12,12 @@ pillow = "*"
 django-elasticsearch-dsl-drf = "*"
 psycopg2 = "*"
 djangorestframework-simplejwt = "*"
+django-allauth = "*"
+dj-rest-auth = "*"
+social-auth-app-django = "*"
+drf-yasg = "*"
+setuptools = "*"
+python-decouple = "*"
 
 [dev-packages]
 
