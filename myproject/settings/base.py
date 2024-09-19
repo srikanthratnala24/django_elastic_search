@@ -146,8 +146,6 @@ SOCIALACCOUNT_PROVIDERS = {
 
 SOCIAL_AUTH_FACEBOOK_KEY = 'your-facebook-app-id'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'your-facebook-app-secret'
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '362085135668-abl21dplkukkfauettu9jrjfe6e5qbg7.apps.googleusercontent.com'
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
 
@@ -228,8 +226,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'srikanthratnala9@gmail.com'
-# EMAIL_HOST_PASSWORD = 'aoed dhdn bqqp xxbq'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
